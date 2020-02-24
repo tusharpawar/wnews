@@ -46,7 +46,7 @@ func GetWeather(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	w.Header().Add("Content-Type", "application/json")
-	w.WriteHeader(http.StatusBadRequest)
+	w.WriteHeader(http.StatusOK)
 	body, _ := ioutil.ReadAll(resp.Body)
 	var res map[string]interface{}
 	json.Unmarshal(body, &res)
@@ -76,7 +76,7 @@ func GetNews(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	w.Header().Add("Content-Type", "application/json")
-	w.WriteHeader(http.StatusBadRequest)
+	w.WriteHeader(http.StatusOK)
 	body, _ := ioutil.ReadAll(resp.Body)
 	var res map[string]interface{}
 	json.Unmarshal(body, &res)
